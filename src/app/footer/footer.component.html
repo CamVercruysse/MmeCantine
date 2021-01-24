@@ -5,6 +5,10 @@
             <p>Ma Cagnote est de :</p>
             <p>{{currentUser.wallet}} €</p>
         </div>
+        <div class="endOrder"  *ngIf="isConnected() && !currentUser.isLunchLady">
+            <p>Fin des Commandes :</p>
+            <p>{{endCommande}}</p>
+        </div>
         <div class="" *ngIf="isConnected() && currentUser.isLunchLady">
             <button 
                 routerLink="/user-list"

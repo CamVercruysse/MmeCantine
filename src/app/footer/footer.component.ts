@@ -3,7 +3,10 @@ import { AuthService } from '../shared/services/auth.service';
 import { UserService } from '../shared/services/user.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { User } from '../shared/models/user';
-
+import { ContraintService } from '../shared/services/contraint.service';
+import { Contraint } from '../shared/models/contraint.model';
+import { Time } from '@angular/common';
+import * as moment from 'moment';
 
 const HELPER = new JwtHelperService();
 
@@ -16,24 +19,39 @@ export class FooterComponent implements OnInit {
 
   public currentUser: User | null;
   public isLunchLady: boolean;
+  public endCommande = null
 
-  constructor() { }
+  constructor(private contraint: ContraintService) { }
 
   ngOnInit(): void {
     this.isConnected();
-    console.log(this.currentUser);
-    
+    this.getContraint()
   }
 
   isConnected() {
-    if(localStorage.getItem("Authorization")){
+    if (localStorage.getItem("Authorization")) {
       let decodeToken = HELPER.decodeToken(localStorage.getItem("Authorization"));
       this.currentUser = decodeToken.user;
       return this.currentUser;
-      
+
     } else {
       return false;
     }
+  }
+
+  public getContraint() {
+    this.contraint.getContraint().subscribe((contraint: Contraint) => {
+      this.endCommande = contraint.orderTimeLimit
+      this.tempRestant(this.endCommande)
+    })
+  }
+
+  public tempRestant(time) {
+    let now = moment().format("HH:mm:ss");
+
+    let diff = moment.utc(moment(time, "HH:mm:ss").diff(moment(now, "HH:mm:ss"))).format("HH:mm:ss")
+
+    this.endCommande = diff
   }
 
 }
