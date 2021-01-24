@@ -16,11 +16,18 @@ export class HeaderComponent implements OnInit {
 
   public currentUser: User | null;
   public isLunchLady: boolean;
+  public isMobile: boolean;
+  public menuResponsive: boolean;
 
   constructor( private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.isConnected();    
+    this.isConnected();
+    if (window.screen.width < 960) {
+      this.isMobile = true;
+    }
+    console.log(this.isMobile);
+    
   }
 
   isConnected() {
@@ -36,5 +43,13 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.authService.signout();
   };
+
+  showMenu(){ 
+    this.menuResponsive = true;
+  }
+  hideMenu(){ 
+    this.menuResponsive = false;
+  }
+
   
 }
