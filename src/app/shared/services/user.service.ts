@@ -47,6 +47,11 @@ export class UserService {
   }
 
 
+  public creditUser(idUser: number, credit: number){
+    return this.http.post(API + '/user/credit/' + idUser + '?amount=' + credit, { observe: 'response' });
+  }
+
+  // public findById(id: number): Observable<User> {
   //     return this.http.get<User>(API + '/user/find/' + id);
 
   // }

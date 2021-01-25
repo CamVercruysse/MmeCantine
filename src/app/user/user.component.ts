@@ -21,20 +21,38 @@ export class UserComponent implements OnInit {
   constructor(private http: HttpClient, private auth: AuthService, private oneuser: UserService) { }
 
   ngOnInit(): void {
-    this.getUserList() 
+    this.getUserList();
   }
 
   getUserList(){
     if(localStorage.getItem("Authorization")) {
       this.token = localStorage.getItem("Authorization");
       let options = {
-        headers : { "Authorization" : this.token } 
+        headers : { "Authorization" : this.token }
       };
       this.http.get(API + '/user/findall', options)
       .subscribe((res : any) => {
         this.users = res;
       });
     }
+  }
+
+  creditOneUser(id: any, amount: any){
+    this.oneuser.creditUser(id, amount).subscribe((res: any) => {
+      console.log(res);
+      this.updateWallet(id, amount);
+      }
+    );
+  }
+
+  updateWallet(id: any, amount: any){
+    this.users.forEach((user: User) => {
+      if (user.id === id) {
+        let newWallet: string = "";
+        newWallet = (user.wallet + parseFloat(amount)).toFixed(2);
+        user.wallet = parseFloat(newWallet);
+      }
+    });
   }
 
 }

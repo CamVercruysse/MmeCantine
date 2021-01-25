@@ -1,3 +1,7 @@
 <ul>
-    <li *ngFor="let user of users" routerLink="/user/{{ user.id }}">{{ user.name }}</li>
+    <li *ngFor="let user of users">
+      <p routerLink="/user/{{ user.id }}">{{ user.name }} {{ user.firstname }} {{user.wallet}}€</p>
+      <input placeholder="Montant à créditer" #amount>
+      <button (click)="creditOneUser(user.id, amount.value)">Créditer</button>
+    </li>
 </ul>
