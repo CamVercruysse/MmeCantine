@@ -1,8 +1,50 @@
 .container {
   padding-left: 3em;
   padding-right: 3em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
 }
 
 h1 {
   font-family: Epilogue-Black;
+}
+
+.table {
+  font-family: Epilogue-Black;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+th {
+  border-bottom: solid 1px #45bf87;
+  font-size: 2em;
+  padding: 1em 1em 0.5em;
+}
+
+td {
+  font-family: Epilogue-Medium;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: solid 1px #fad0d0;
+}
+
+@media screen and (max-width: 992px) {
+  table { text-align: center; border: none;}
+  th {
+    border-bottom: solid 1px #45bf87;
+    font-size: 0.8em;
+    padding: 1em 1em 0.5em;
+  }
+  
+  td {
+    font-family: Epilogue-Medium;
+    padding: 0.5em;
+    font-size: 0.6em;
+    text-align: center;
+    border-bottom: solid 1px #fad0d0;
+  }
+
 }

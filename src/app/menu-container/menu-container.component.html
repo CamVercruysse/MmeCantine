@@ -1,6 +1,7 @@
+
 <div class="container">
   <div class="header">
-    <h1>Au menu aujourd'hui !</h1>
+    
     <div>
       <span
         *ngIf="message"
@@ -13,25 +14,29 @@
   </div>
 
   <div class="menu-container">
-    <div *ngFor="let menu of menus">
-      <div class="menu-item">
-        <div class="indicateur">
-          <span>Reste</span>
-        </div>
-        <div class="header">
-          <h3>{{ menu.label }}</h3>
-          <span>{{ menu.priceDF }} €</span>
-        </div>
-        <ul *ngIf="menu.meals">
-          <li *ngFor="let meal of menu.meals">{{meal.label}}</li>
-        </ul>
-        <div class="btn">
-          <button class="btn-pink" routerLink="/menu/{{ menu.id }}">
-            Voir le detail
-          </button>
-          <button class="btn-green" (click)="addCommande(menu)">Commander</button>
+    <h1>Au menu aujourd'hui !</h1>
+    <div class="grid">
+      <div class="grid-body" *ngFor="let menu of menus">
+        <div class="menu-item">
+          <div class="indicateur">
+            <span>{{ menu.priceDF }} €</span>
+          </div>
+          <div class="header">
+            <h3>{{ menu.label }}</h3>
+            
+          </div>
+          <ul *ngIf="menu.meals">
+            <li class="label-meal" *ngFor="let meal of menu.meals">{{meal.label}}</li>
+          </ul>
+          <div class="btn">
+            <button class="btn-pink" routerLink="/menu/{{ menu.id }}">
+              Voir le detail
+            </button>
+            <button class="btn-green" (click)="addCommande(menu)">Commander</button>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>

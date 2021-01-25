@@ -13,27 +13,30 @@
   </div>
 
   <div class="menu-container">
-    <div *ngFor="let meal of menu.meals">
-      <div class="menu-item">
-        <div class="header">
-          <h3>{{ meal.label }}</h3>
-        </div>
-        <div class="row">
-          <ul *ngIf="meal.ingredients">
-            <li *ngFor="let ingredient of meal.ingredients">
-              {{ ingredient.label }}
-            </li>
-          </ul>
-          <img
-            src="../../assets/images/meal/{{ meal.label }}.png"
-            alt=""
-            srcset=""
-          />
+    <div class="grid">
+      <div class="grid-body" *ngFor="let meal of menu.meals">
+        <div class="menu-item">
+          <div class="header">
+            <h3>{{ meal.label }}</h3>
+          </div>
+          <div class="row">
+            <ul *ngIf="meal.ingredients">
+              <li *ngFor="let ingredient of meal.ingredients">
+                {{ ingredient.label }}
+              </li>
+            </ul>
+            <img
+              src="../../assets/images/meal/{{ meal.label }}.png"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div class="btn">
+            <button class="btn-green" (click)="addCommande(menu)">Commander</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="btn">
-    <button class="btn-green" (click)="addCommande(menu)">Commander</button>
-  </div>
+
 </div>

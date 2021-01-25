@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-header">
   <nav class="nav">
     <img
       class="logo"
@@ -6,50 +6,68 @@
       alt="Logo Madame Cantine"
       routerLink="/"
     />
-    <ul class="menu-list">
-      <li><button class="btn-simple" routerLink="/">Menus</button></li>
-      <li><button class="btn-simple" routerLink="repas">A la carte</button></li>
-      <li>
-        <button *ngIf="!isConnected()" class="btn-green" routerLink="/register">Inscription</button>
-      </li>
-      <li>
-        <div *ngIf="isConnected()">
-          <div *ngIf="currentUser">
-            <button *ngIf="currentUser.isLunchLady" class="btn-simple" routerLink="/commandes-list">
-              Les commandes
+    <!-- Menu Desktop View -->
+    <div class="block-menu">
+      <div class="flex-end-menu">
+        <ul class="menu-list">
+          <li><button class="btn-simple" routerLink="/">Menus</button></li>
+          <li><button class="btn-simple" routerLink="repas">À la carte</button></li>
+          <li>
+            <button *ngIf="!isConnected()" class="btn-green" routerLink="/register">Inscription</button>
+          </li>
+          <li>
+            <div *ngIf="isConnected()">
+              <div *ngIf="currentUser">
+                <button *ngIf="currentUser.isLunchLady" class="btn-simple" routerLink="/commandes-list">
+                  Les commandes
+                </button>
+                <button *ngIf="!currentUser.isLunchLady" class="btn-simple" routerLink="/commandes">
+                  Mes commandes
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button *ngIf="isConnected()" class="btn-green" routerLink="/profile">
+              Mon compte
             </button>
-            <button *ngIf="!currentUser.isLunchLady" class="btn-simple" routerLink="/commandes">
-              Mes commandes
+          </li>
+          <li>
+            <button *ngIf="!isConnected()" class="btn-pink" routerLink="/connexion">
+              Connexion
             </button>
-          </div>
-        </div>
-        
-      </li>
-      <li>
-        <button *ngIf="isConnected()" class="btn-green" routerLink="/profile">
-          Mon compte
-        </button>
-      </li>
-      <li>
-        <button *ngIf="!isConnected()" class="btn-pink" routerLink="/connexion">
-          Connexion
-        </button>
-      </li>
-      <li>
-        <button
-          *ngIf="isConnected()"
-          (click)="logout()"
-          class="btn-pink"
-          routerLink="/"
-        >
-          Déconnexion
-        </button>
-      </li>
-      <li *ngIf="isConnected()">
-        <span>{{ currentUser.firstname }}</span
-        ><br />
-        <span>{{ currentUser.name }}</span>
-      </li>
-    </ul>
+          </li>
+          <li>
+            <button
+              *ngIf="isConnected()"
+              (click)="logout()"
+              class="btn-pink"
+              routerLink="/"
+            >
+              Déconnexion
+            </button>
+          </li>
+          <li class="current-user" *ngIf="isConnected()">
+            <span>{{ currentUser.firstname }}</span>
+            <span>{{ currentUser.name }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END Menu Desktop View -->
   </nav>
+  <ul class="menu-res" *ngIf="menuResponsive">
+    <li><img routerLink="repas" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/hamburger-solid.svg"></li>
+    <li><img routerLink="/" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/utensils-solid.svg"></li>
+    <li><img *ngIf="!isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/user-plus-solid.svg"></li>
+    <li><img routerLink="/profile" *ngIf="isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/user-solid.svg"></li>
+    <li><img routerLink="/connexion" *ngIf="!isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/power-off-solid.svg"></li>
+    <li><img routerLink="/" *ngIf="isConnected()" (click)="logout()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/power-off-solid.svg"></li>
+  </ul>
+  <div class="bg-menu" *ngIf="menuResponsive" (click)="hideMenu()"></div>
 </div>
+
+<button *ngIf="isMobile">
+  <img class="plus" *ngIf="!menuResponsive" (click)="showMenu()" src="../../assets/images/elements/plus-solid.svg" alt="">
+  <img class="plus" *ngIf="menuResponsive" (click)="hideMenu()" src="../../assets/images/elements/minus-solid.svg" alt="">
+</button>
