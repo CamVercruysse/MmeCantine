@@ -13,6 +13,7 @@ import { CommandesComponent } from './commandes/commandes.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CommandesListComponent } from './lunchLady/commandes-list/commandes-list.component';
 import { CommandesDetailsComponent } from './lunchLady/commandes-details/commandes-details.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: MenuContainerComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'commandes', component: CommandesComponent },
   { path: 'commandes-list', component: CommandesListComponent }, 
   { path: 'commandes-detail', component: CommandesDetailsComponent }, 
+  { path: 'register', component: RegisterComponent },
   { path: 'menu/:id', component: MenuDetailsComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: '**', component: MenuContainerComponent },

@@ -1,0 +1,65 @@
+<div class="container">
+  <h1>Inscription</h1>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <div class="row">
+      <div class="col">
+        <label>Nom :</label>
+        <input type="text" placeholder="Nom" formControlName="name"/>
+      </div>
+
+      <div class="col">
+        <label>Prenom :</label>
+        <input type="text" placeholder="Prenom" formControlName="firstname"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label>Email :</label>
+        <input type="email" placeholder="email" formControlName="email"/>
+      </div>
+      <div class="col">
+        <label>Telephone :</label>
+        <input type="tel" placeholder="tel" formControlName="phone" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label >Mot de passe :</label>
+        <input type="password" placeholder="password" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].errors }"/>
+      </div>
+      <div class="col">
+        <label>Confirmer mot de passe :</label>
+        <input type="password" placeholder="password" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="address">Adresse</label>
+        <input type="text" placeholder="address" id="address" formControlName="address" />
+      </div>
+      <div class="col">
+        <label for="cp">Code postal :</label>
+        <input type="text" placeholder="code postal" formControlName="postalCode" id="cp"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="ville">Ville</label>
+        <input type="text" placeholder="Ville" id="ville" formControlName="town" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn-green">S'inscrire</button>
+      </div>
+    </div>
+  </form>
+</div>

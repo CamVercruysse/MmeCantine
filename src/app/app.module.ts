@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +22,7 @@ import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
 import { CommandesListComponent } from './lunchLady/commandes-list/commandes-list.component';
 import { CommandesDetailsComponent } from './lunchLady/commandes-details/commandes-details.component';
 
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CommandesDetailsComponent } from './lunchLady/commandes-details/command
     FooterComponent,
     CommandesListComponent,
     CommandesDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { CommandesDetailsComponent } from './lunchLady/commandes-details/command
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },AuthService],
   bootstrap: [AppComponent]
