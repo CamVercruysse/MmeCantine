@@ -39,4 +39,29 @@ export class CommandesDetailsComponent implements OnInit {
     })
   }
 
+  public supprimerCommande(idCommande) {
+    if (window.confirm("Supprimer la commande?")) {
+      this.orderService.SupprimerUneCommande(idCommande).subscribe((res: any) => {
+        this.message = "Commande Supprimer"
+        this.messageType = true
+
+        setTimeout(() => {
+          this.message = null
+          this.messageType = null
+          this.router.navigate(['commandes-list'])
+        }, 3000);
+      }, (err) => {
+        this.message = err.error.exceptionMessage
+        this.messageType = false
+
+        setTimeout(() => {
+          this.message = null
+          this.messageType = null
+        }, 3000);
+      })
+
+    }
+
+  }
+
 }

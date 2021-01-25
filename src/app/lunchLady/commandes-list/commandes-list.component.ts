@@ -74,7 +74,6 @@ export class CommandesListComponent implements OnInit {
     this.orderService.findAllOrderDateBetween(dateDebut,dateFin).subscribe((orders: Order[]) => {
       this.allCommandes = orders
       this.commandes = this.countCommandes()
-      console.log(this.commandes);
     })
 
   }

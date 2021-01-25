@@ -1,22 +1,29 @@
 <!-- Footer avertissement + Cagnote -->
 <footer>
-    <div class="compte-info">
-        <div class="compte-info-card-item cagnote"  *ngIf="isConnected() && !currentUser.isLunchLady">
-            <p>Ma Cagnote est de :</p>
-            <p>{{currentUser.wallet}} €</p>
-        </div>
-        <div class="" *ngIf="isConnected() && currentUser.isLunchLady">
-            <button 
-                routerLink="/user-list"
-                class="btn-green get-user">User List
-            </button>
-        </div>
-        <!-- <div class="user-info">
+  <div class="compte-info">
+    <div
+      class="compte-info-card-item cagnote"
+      *ngIf="isConnected() && !currentUser.isLunchLady"
+    >
+      <p>Ma Cagnote est de :</p>
+      <p>{{ currentUser.wallet }} €</p>
+    </div>
+    <div class="endOrder" *ngIf="isConnected() && !currentUser.isLunchLady">
+      <p>Fin des Commandes :</p>
+      <p *ngIf="endCommande">{{ endCommande }}</p>
+      <p *ngIf="!endCommande">Terminer</p>
+    </div>
+    <div class="" *ngIf="isConnected() && currentUser.isLunchLady">
+      <button routerLink="/user-list" class="btn-green get-user">
+        User List
+      </button>
+    </div>
+    <!-- <div class="user-info">
             <p>Afin de créditer votre cagnotte,
                veuillez passer au comptoir
                de Mme Cantine, merci.</p>
         </div> -->
-    </div>
+  </div>
 </footer>
 
 <!-- Footer avertissement + Cagnote -->
