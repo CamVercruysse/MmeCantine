@@ -8,11 +8,11 @@
       <p>Il me reste :</p>
       <p>{{ currentUser.wallet }} €</p>
       <p>sur ma cagnote</p>
-      <div class="end-order">
-        <p *ngIf="endCommande">Fin des Commandes :</p>
-        <p *ngIf="endCommande">{{ endCommande }}</p>
-        <p *ngIf="!endCommande">Les commandes sont terminées</p>
-      </div>
+    </div>
+    <div class="end-order" *ngIf="!currentUser.isLunchLady">
+      <p *ngIf="endCommande">Fin des Commandes :</p>
+      <p *ngIf="endCommande">{{ endCommande }}</p>
+      <p *ngIf="!endCommande">Les commandes sont terminées</p>
     </div>
 
     <div class="btn-credit" *ngIf="isConnected() && currentUser.isLunchLady">
