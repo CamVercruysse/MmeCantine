@@ -55,6 +55,12 @@ export class UserComponent implements OnInit {
     });
   }
 
+  deleteUser(id: any){
+    this.oneuser.deleteUser(id).subscribe((res: any) => {
+      console.log(res);
+    });
+  }
+
 }
 
 

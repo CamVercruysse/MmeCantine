@@ -1,7 +1,11 @@
 <ul>
     <li *ngFor="let user of users">
-      <p routerLink="/user/{{ user.id }}">{{ user.name }} {{ user.firstname }} {{user.wallet}}€</p>
-      <input placeholder="Montant à créditer" #amount>
-      <button (click)="creditOneUser(user.id, amount.value)">Créditer</button>
+      <div *ngIf="user.status !== 2">
+        <p routerLink="/user/{{ user.id }}">{{ user.name }} {{ user.firstname }} {{user.wallet}}€</p>
+        <input placeholder="Montant à créditer" #amount>
+        <button (click)="creditOneUser(user.id, amount.value)">Créditer</button>
+        <button (click)="deleteUser(user.id)">Supprimer user</button>
+      </div>
+
     </li>
 </ul>

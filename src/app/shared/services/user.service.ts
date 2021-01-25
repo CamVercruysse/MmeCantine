@@ -51,6 +51,10 @@ export class UserService {
     return this.http.post(API + '/user/credit/' + idUser + '?amount=' + credit, { observe: 'response' });
   }
 
+  public deleteUser(idUser: any){
+    return this.http.delete(API + '/user/delete/' + idUser);
+  }
+
   // public findById(id: number): Observable<User> {
   //     return this.http.get<User>(API + '/user/find/' + id);
 
