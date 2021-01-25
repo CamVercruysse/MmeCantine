@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Changement d'informations de {{user.name}} {{user.firstname}}</h1>
+</div>
+
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="updateUser(user.id)">
+    <div class="row">
+      <div class="col">
+        <label>Nom :</label>
+        <input type="text" placeholder="{{user.name}}" formControlName="name" />
+      </div>
+
+      <div class="col">
+        <label>Prenom :</label>
+        <input type="text" placeholder="{{user.firstname}}" formControlName="firstname"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label>Email :</label>
+        <input type="email" placeholder="{{user.email}}" formControlName="email"/>
+      </div>
+      <div class="col">
+        <label>Telephone :</label>
+        <input type="tel" placeholder="{{user.phone}}" formControlName="phone" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label >Mot de passe :</label>
+        <input type="password" placeholder="Votre mot de passe" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].errors }"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label >Adresse</label>
+        <input type="text" placeholder="{{user.address}}" formControlName="address" />
+      </div>
+      <div class="col">
+        <label>Code postal :</label>
+        <input type="text" placeholder="{{user.postalCode}}" formControlName="postalCode"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label>Ville</label>
+        <input type="text" placeholder="{{user.town}}" formControlName="town"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="btn-green">Modifier les infos</button>
+      </div>
+    </div>
+  </form>
+</div>

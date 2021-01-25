@@ -34,6 +34,10 @@ export class UserService {
   findById(id: number): Observable<User> {
     return this.http.get<User>(API + '/user/find/' + id);
   }
+
+  userUpdate(id: any, form: any){
+    return this.http.patch(API + '/user/update/' + id, form);
+  }
   // public findById(id: number): Observable<User> {
   /**
    * Return le user recuperer via une requete vers l'Api

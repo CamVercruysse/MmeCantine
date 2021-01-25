@@ -14,6 +14,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CommandesListComponent } from './lunchLady/commandes-list/commandes-list.component';
 import { CommandesDetailsComponent } from './lunchLady/commandes-details/commandes-details.component';
 import {RegisterComponent} from './register/register.component';
+import {UpdateUserComponent} from './update-user/update-user.component';
 
 const routes: Routes = [
   { path: '', component: MenuContainerComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'connexion', component: AuthComponent },
   { path: 'user-list', canActivate: [AuthGuard], component: UserComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'updateUser', component: UpdateUserComponent },
   { path: 'commandes', component: CommandesComponent },
   { path: 'commandes-list', component: CommandesListComponent }, 
   { path: 'commandes-detail', component: CommandesDetailsComponent }, 

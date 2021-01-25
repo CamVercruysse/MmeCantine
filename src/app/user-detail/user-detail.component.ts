@@ -12,17 +12,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserDetailComponent implements OnInit {
 
-  // public user: User {
-  //   id: "",
-  //   sex?: number,
-  //   nom: string,
-  //   prenom: string,
-  //   email: string,
-  // };
-  // public user: User = {
-  //   id: null,
-  //   nom: ""
-  // };
   token: string | null = null;
   public user: User | null = null;
 
@@ -34,19 +23,15 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit(): void {
         this.getToken();
-        // this.getById(this.user.id);
-        // console.log(this.token);
 
-          this.activatedRoute.params.subscribe(params => {
-
+        this.activatedRoute.params.subscribe(params => {
             let id = params['id'];
             this.http.get('http://localhost:8080/lunchtime/user/find/' + id).subscribe((user: User) => {
               localStorage.getItem("Authorization");
               this.user = user;
             });
-         });        
-      }
-  
+        });
+  }
 
   getToken(){
     return this.token = localStorage.getItem("Authorization");

@@ -23,6 +23,7 @@ import { CommandesListComponent } from './lunchLady/commandes-list/commandes-lis
 import { CommandesDetailsComponent } from './lunchLady/commandes-details/commandes-details.component';
 
 import { RegisterComponent } from './register/register.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +40,13 @@ import { RegisterComponent } from './register/register.component';
     FooterComponent,
     CommandesListComponent,
     CommandesDetailsComponent,
-    RegisterComponent
+    RegisterComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
