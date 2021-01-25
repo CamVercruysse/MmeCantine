@@ -69,15 +69,15 @@ export class FooterComponent implements OnInit {
 
         let diff = moment.utc(moment(time, "HH:mm:ss").diff(moment(now, "HH:mm:ss"))).format("HH:mm:ss")
 
-        // this.endCommande = diff
+        this.endCommande = diff
 
-        // if (time == now) {
-        //   clearInterval(interval)         
-        // }
-        // else{
-        //   this.endCommande = diff
-        //   console.log(this.endCommande);
-        // }
+        if (time == now) {
+          clearInterval(interval)  
+          this.endCommande = null       
+        }
+        else{
+          this.endCommande = diff
+        }
        
       }, 1000)
     }
