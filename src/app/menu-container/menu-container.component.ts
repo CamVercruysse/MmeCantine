@@ -23,6 +23,8 @@ export class MenuContainerComponent implements OnInit {
     private userService: UserService) { }
 
   ngOnInit(): void {
+    // console.log(this.user.firstname);
+    
     this.MenuService.findAllAvailableForToday().subscribe((menus: Menu[]) => {
       this.menus = menus;
     });

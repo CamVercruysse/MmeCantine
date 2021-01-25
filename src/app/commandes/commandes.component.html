@@ -1,56 +1,47 @@
 <div class="container">
-  <h1>Mes Commandes</h1>
+  <h1>Mes commandes</h1>
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Quantité</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commande of commandes">
+          <td>{{ commande.creationDate }}</td>
+          <td *ngFor="let quantity of commande.quantity">
+            {{ quantity.quantity }}
+          </td>
+          <td *ngFor="let quantity of commande.quantity">
+            <div *ngIf="quantity.meal">
+              {{ quantity.meal.label }}
+            </div>
+            <div *ngIf="quantity.menu">
+              {{ quantity.menu.label }}
+            </div>
+            
+          </td>
+          <td *ngFor="let quantity of commande.quantity">
+            <div *ngIf="quantity.meal">
+              {{ quantity.meal.priceDF }} €
+            </div>
+            <div *ngIf="quantity.menu">
+              {{ quantity.menu.priceDF }} €
+            </div>
+          </td>
+          <td>
+            <!-- {{commande.status}} -->
+            {{status[commande.status]}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Date :</th>
-        <th>Quantité :</th>
-        <th>Description :</th>
-        <th>Prix :</th>
-        <th>Status :</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let commande of commandes">
-        <td>{{ commande.creationDate }}</td>
-        <td *ngFor="let quantity of commande.quantity">
-          {{ quantity.quantity }}
-        </td>
-        <td *ngFor="let quantity of commande.quantity">
-          <div *ngIf="quantity.meal">
-            {{ quantity.meal.label }}
-          </div>
-          <div *ngIf="quantity.menu">
-            {{ quantity.menu.label }}
-          </div>
-          
-        </td>
-        <td *ngFor="let quantity of commande.quantity">
-          <div *ngIf="quantity.meal">
-            {{ quantity.meal.priceDF }} €
-          </div>
-          <div *ngIf="quantity.menu">
-            {{ quantity.menu.priceDF }} €
-          </div>
-        </td>
-        <td>
-          <!-- {{commande.status}} -->
-          {{status[commande.status]}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
-<style>
-  td,
-  th,
-  tr {
-    border: solid 1px;
-  }
-
-  td{
-    padding: 0.5em;
-  }
-</style>

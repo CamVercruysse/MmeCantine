@@ -47,9 +47,8 @@
               Déconnexion
             </button>
           </li>
-          <li *ngIf="isConnected()">
-            <span>{{ currentUser.firstname }}</span
-            ><br />
+          <li class="current-user" *ngIf="isConnected()">
+            <span>{{ currentUser.firstname }}</span>
             <span>{{ currentUser.name }}</span>
           </li>
         </ul>

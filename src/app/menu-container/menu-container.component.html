@@ -19,14 +19,14 @@
       <div class="grid-body" *ngFor="let menu of menus">
         <div class="menu-item">
           <div class="indicateur">
-            <span>Reste</span>
+            <span>{{ menu.priceDF }} €</span>
           </div>
           <div class="header">
             <h3>{{ menu.label }}</h3>
-            <span>{{ menu.priceDF }} €</span>
+            
           </div>
           <ul *ngIf="menu.meals">
-            <li *ngFor="let meal of menu.meals">{{meal.label}}</li>
+            <li class="label-meal" *ngFor="let meal of menu.meals">{{meal.label}}</li>
           </ul>
           <div class="btn">
             <button class="btn-pink" routerLink="/menu/{{ menu.id }}">

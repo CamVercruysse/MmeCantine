@@ -1,6 +1,11 @@
 h1 {
     font-family: Epilogue-Black;
   }
+
+h3, span {
+  font-family: Epilogue-ExtraBold;
+  color: gray;
+}
   
   .container {
     padding-left: 3em;
@@ -9,14 +14,25 @@ h1 {
   
   .menu-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
   }
 
-  h3,
-span {
-  font-family: Epilogue-Bold;
-}
+  .grid{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+
+  li {
+    list-style: none;
+    font-family: Epilogue-Bold;
+    color: gray;
+    line-height: 2em;
+  }
+
+
 
 .menu-item {
   width: 380px;
@@ -94,4 +110,28 @@ button:focus {
   background-color: #45bf87;;
   padding: 1em;
   border-radius: 1em;
+}
+
+@media screen and (max-width: 992px) {
+
+  .container{
+    left: 0;
+    right: 0;
+  }
+  .grid-body {
+    display: flex;
+    flex-direction: column!important;
+    align-items: center!important;
+  }
+  .menu-item {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 52px -7px rgba(0, 0, 0, 0.25);
+    border-radius: 1em;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+  }
 }

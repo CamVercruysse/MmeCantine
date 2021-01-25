@@ -7,6 +7,16 @@ h1 {
   text-align: center;
 }
 
+li {
+  list-style: none;
+}
+
+.label-meal {
+  font-family: Epilogue-Bold;
+  color: gray;
+  line-height: 2em;
+}
+
 .menu-container {
   display: flex;
   justify-content: space-evenly;
@@ -21,7 +31,8 @@ h1 {
 
 h3,
 span {
-  font-family: Epilogue-Bold;
+  font-family: Epilogue-ExtraBold;
+  color: gray;
 }
 
 .menu-item {
@@ -86,20 +97,16 @@ button:focus {
   outline: 0px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  }
+
 
   .alert{
-    background-color: red;
+    background-color:#fad0d0;
     padding: 1em;
     border-radius: 1em;
     }
     
     .success{
-    background-color: #45bf87;;
+    background-color: #45bf87;
     padding: 1em;
     border-radius: 1em;
     }

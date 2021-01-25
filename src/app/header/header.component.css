@@ -9,7 +9,14 @@
 }
 .logo {
   max-width: 12em;
-  
+}
+
+.current-user {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Epilogue-ExtraBold;
+  color: #ff9595;
 }
 
 .flex-end-menu {
@@ -36,6 +43,10 @@ img:focus {
 }
 
 @media screen and (max-width: 992px) {
+
+  .current-user {
+    display: none;
+  }
 
   .plus {
     width: 1.5em;

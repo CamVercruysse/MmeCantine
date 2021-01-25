@@ -1,8 +1,7 @@
-<div class="main-container">
-  <h1>Mon Compte :</h1>
-  <div class="container" *ngIf="currentUser">
+<div class="profil-page">
+  <div class="card-profil" *ngIf="currentUser">
     <div class="row">
-      <div class="item">
+      <div class="item"> 
         <label>Nom : </label>
         {{ currentUser.firstname }}
       </div>
