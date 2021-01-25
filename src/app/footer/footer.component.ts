@@ -47,11 +47,39 @@ export class FooterComponent implements OnInit {
   }
 
   public tempRestant(time) {
+    // setInterval(() => {
+    //   let now = moment().format("HH:mm:ss");
+
+    //   let diff = moment.utc(moment(time, "HH:mm:ss").diff(moment(now, "HH:mm:ss"))).format("HH:mm:ss")
+
+    //   this.endCommande = diff
+
+    //   console.log(this.endCommande);
+
+    // },1000)
+
     let now = moment().format("HH:mm:ss");
 
-    let diff = moment.utc(moment(time, "HH:mm:ss").diff(moment(now, "HH:mm:ss"))).format("HH:mm:ss")
+    if (time < now) {
+      this.endCommande = null
+    }
+    else {
+      let interval = setInterval(() => {
+        let now = moment().format("HH:mm:ss");
 
-    this.endCommande = diff
+        let diff = moment.utc(moment(time, "HH:mm:ss").diff(moment(now, "HH:mm:ss"))).format("HH:mm:ss")
+
+        // this.endCommande = diff
+
+        // if (time == now) {
+        //   clearInterval(interval)         
+        // }
+        // else{
+        //   this.endCommande = diff
+        //   console.log(this.endCommande);
+        // }
+       
+      }, 1000)
+    }
   }
-
 }
