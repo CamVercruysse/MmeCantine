@@ -1,65 +1,74 @@
-<div class="container">
-  <h1>Inscription</h1>
-</div>
-
-<div class="form-container">
-  <form [formGroup]="form" (ngSubmit)="register()">
-    <div class="row">
-      <div class="col">
-        <label>Nom :</label>
-        <input type="text" placeholder="Nom" formControlName="name"/>
+<div class="card-register">
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <h1>S'inscrire</h1>
+    <div class="form">
+    <!-- Là on divise en flex -->
+    <div class="flex-group">
+      <div class="row">
+        <div class="col">
+          <label>Nom :</label>
+          <input type="text" placeholder="Doe" formControlName="name"/>
+        </div>
+  
+        <div class="col">
+          <label>Prenom :</label>
+          <input type="text" placeholder="John" formControlName="firstname"/>
+        </div>
       </div>
-
-      <div class="col">
-        <label>Prenom :</label>
-        <input type="text" placeholder="Prenom" formControlName="firstname"/>
+  
+      <div class="row">
+        <div class="col">
+          <label>Email :</label>
+          <input type="email" placeholder="johndoe@m-cantine.com" formControlName="email"/>
+        </div>
+        <div class="col">
+          <label>Telephone :</label>
+          <input type="tel" placeholder="06.00.00.00.00" formControlName="phone" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label >Mot de passe :</label>
+          <input type="password" placeholder="********" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].errors }"/>
+        </div>
+        <div class="col">
+          <label>Confirmer mot de passe :</label>
+          <input type="password" placeholder="********" />
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <label>Email :</label>
-        <input type="email" placeholder="email" formControlName="email"/>
-      </div>
-      <div class="col">
-        <label>Telephone :</label>
-        <input type="tel" placeholder="tel" formControlName="phone" />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <label >Mot de passe :</label>
-        <input type="password" placeholder="password" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].errors }"/>
-      </div>
-      <div class="col">
-        <label>Confirmer mot de passe :</label>
-        <input type="password" placeholder="password" />
-      </div>
-    </div>
-
+  <!-- Là on divise en flex -->
+  <div class="flex-group">
     <div class="row">
       <div class="col">
         <label for="address">Adresse</label>
-        <input type="text" placeholder="address" id="address" formControlName="address" />
+        <input type="text" placeholder="16 allée de la Cantine" id="address" formControlName="address" />
       </div>
       <div class="col">
         <label for="cp">Code postal :</label>
-        <input type="text" placeholder="code postal" formControlName="postalCode" id="cp"/>
+        <input type="text" placeholder="59000" formControlName="postalCode" id="cp"/>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="ville">Ville</label>
-        <input type="text" placeholder="Ville" id="ville" formControlName="town" />
+        <input type="text" placeholder="Lille" id="ville" formControlName="town" />
       </div>
     </div>
+  </div>
+      </div>
 
-    <div class="row">
-      <div class="col">
-        <button class="btn-green">S'inscrire</button>
+
+  
+      <div class="row">
+        <div class="col">
+          <button class="btn-green">S'inscrire</button>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
+
