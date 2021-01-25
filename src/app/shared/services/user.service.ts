@@ -34,6 +34,6 @@ export class UserService {
   // public findById(id: number): Observable<User> {
 
   //     return this.http.get<User>(API + '/user/find/' + id);
-    
+
   // }
 }

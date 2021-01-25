@@ -20,7 +20,7 @@ export class AuthService {
   public currentUser: User = null;
   token: string | null = "";
   isLunchLady: boolean;
-  
+
 
   constructor(
     private http: HttpClient,
@@ -44,7 +44,9 @@ export class AuthService {
     this.token = null;
   };
 
-
+  addUser(form: any){
+    return this.http.put(API + '/user/register', form);
+  }
 
 
 

@@ -11,6 +11,7 @@ import { MenuDetailsComponent } from './menu-container/menu-details/menu-details
 import { RepasComponent } from './repas/repas.component';
 import { CommandesComponent } from './commandes/commandes.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: MenuContainerComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'user-list', canActivate: [AuthGuard], component: UserComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'commandes', component: CommandesComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'menu/:id', component: MenuDetailsComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: '**', component: MenuContainerComponent },

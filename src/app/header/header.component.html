@@ -10,7 +10,7 @@
       <li><button class="btn-simple" routerLink="/">Menus</button></li>
       <li><button class="btn-simple" routerLink="repas">A la carte</button></li>
       <li>
-        <button *ngIf="!isConnected()" class="btn-green">Inscription</button>
+        <button *ngIf="!isConnected()" class="btn-green" routerLink="/register">Inscription</button>
       </li>
       <li>
         <button *ngIf="isConnected()" class="btn-simple" routerLink="/commandes">
