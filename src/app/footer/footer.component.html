@@ -5,17 +5,19 @@
       class="compte-info-card-item cagnote"
       *ngIf="isConnected() && !currentUser.isLunchLady"
     >
-      <p>Ma Cagnote est de :</p>
+      <p>Il me reste :</p>
       <p>{{ currentUser.wallet }} €</p>
+      <p>sur ma cagnote</p>
+      <div class="end-order">
+        <p *ngIf="endCommande">Fin des Commandes :</p>
+        <p *ngIf="endCommande">{{ endCommande }}</p>
+        <p *ngIf="!endCommande">Les commandes sont terminées</p>
+      </div>
     </div>
-    <div class="endOrder">
-      <p>Fin des Commandes :</p>
-      <p *ngIf="endCommande">{{ endCommande }}</p>
-      <p *ngIf="!endCommande">Terminer</p>
-    </div>
-    <div class="" *ngIf="isConnected() && currentUser.isLunchLady">
+
+    <div class="btn-credit" *ngIf="isConnected() && currentUser.isLunchLady">
       <button routerLink="/user-list" class="btn-green get-user">
-        User List
+        Créditer un employé 
       </button>
     </div>
     <!-- <div class="user-info">

@@ -1,0 +1,48 @@
+.page {
+    margin-top: 0em;
+}
+
+li {
+    list-style: none;
+    font-family: Epilogue-Bold;
+    color: gray;
+    font-size: 1.5em;
+}
+
+input{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom: solid 1px lightgray;
+    font-family: Epilogue-Medium;
+    font-size: 1.5em;
+}
+
+input::placeholder{
+    color: rgba(211, 211, 211, 0.342);
+}
+
+input:focus{
+    outline: none;
+}
+
+.list-container {
+    padding-top: 10em;
+}
+
+.btn-green:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 992px) {
+    input{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+        border-bottom: solid 1px lightgray;
+        font-family: Epilogue-Medium;
+        font-size: 1.5em;
+        width: 70%;
+    }
+
+}

@@ -1,0 +1,137 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: -1;
+    margin-top: 8em;
+    width: 60%;
+    height: 70%;
+    padding: 3em;
+    background-color: white;
+    border-radius: 2em;
+    box-shadow: 0px 0px 52px -7px rgba(0,0,0,0.25);
+}
+
+h1 {
+    text-align: left;
+    color:#45bf87;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.card-register {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-group {
+    width: 60%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: Epilogue-Bold;
+    color: gray;
+    font-size: 1em;
+}
+
+input::placeholder {
+    font-family: Epilogue-Bold;
+    color: lightgray;
+    font-size: 1em;
+}
+
+input {
+    font-family: Epilogue-Bold;
+    font-size: 1.2em;
+    color: lightgray;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid gray 1px;
+    width: 70%;
+    margin-bottom: 1em;
+    padding: 0.5em 0em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.btn-green {
+    width: 20%;
+    margin-top: 2em;
+
+}
+
+@media screen and (max-width: 992px) {
+
+    h1 {
+        text-align: left;
+        color:#45bf87;
+        margin-bottom: 1em;
+        margin-top: -1em;
+        font-size: 1.5em;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        margin-top: 3em;
+        width: 75%;
+        height: 80%;
+        padding: 2em;
+        background-color: white;
+        border-radius: 2em;
+        box-shadow: 0px 0px 52px -7px rgba(0,0,0,0.25);
+    }
+
+    .form {
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-group {
+        width: 80%;
+       
+    }
+
+    input {
+        font-family: Epilogue-Bold;
+        font-size: 0.8em;
+        color: lightgray;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: solid gray 1px;
+        width: 120%;
+        margin-bottom: em;
+        padding: 0.5em 0em;
+    }
+
+    label {
+        font-family: Epilogue-Bold;
+        color: gray;
+        font-size: 0.8em;
+    }
+
+    .btn-green {
+        width: 50%;
+        margin-top: 2em;
+        margin-bottom: -8em;
+    
+    }
+}
