@@ -13,10 +13,65 @@ footer {
 }
 
 .compte-info{
-    display:flex
+    display:flex;
 }
 
-.endOrder{
-    margin-left: 1em;
-    margin-right: 1em;
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.get-user {
+    background: #ff9595;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.40);
+}
+
+.get-user:focus {
+    outline: none;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.cagnote, .end-order {
+    font-family: Epilogue-Bold;
+    line-height: -1em;
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    padding: 0.5em 2em;
+    border-radius: 1em;
+    margin: 1em;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.40);
+}
+
+.end-order {
+    background: #ff9595;
+
+}
+
+.cagnote {
+    background:  #45bf87;
+
+}
+@media screen and (max-width: 992px) {
+
+    footer {
+        width: 100%;
+        display:flex;
+        justify-content: center;
+    }
+
+    p {
+        margin-top: 0em;
+        margin-bottom: 0em;
+    }
+
+    .end-order, .cagnote {
+        display: none;
+    }
+
+
 }
