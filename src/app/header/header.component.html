@@ -59,7 +59,7 @@
   <ul class="menu-res" *ngIf="menuResponsive">
     <li><img routerLink="repas" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/hamburger-solid.svg"></li>
     <li><img routerLink="/" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/utensils-solid.svg"></li>
-    <li><img *ngIf="!isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/user-plus-solid.svg"></li>
+    <li><img routerLink="/register" *ngIf="!isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/user-plus-solid.svg"></li>
     <li><img *ngIf="isConnected() && currentUser.isLunchLady" routerLink="/commandes-list" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/bars-solid.svg"></li>
     <li><img *ngIf="isConnected() && !currentUser.isLunchLady" routerLink="/commandes" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/bars-solid.svg"></li>
     <li><img routerLink="/profile" *ngIf="isConnected()" (click)="hideMenu()"class="pictos" src="../../assets/images/elements/user-solid.svg"></li>
