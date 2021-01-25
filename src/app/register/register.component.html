@@ -10,13 +10,13 @@
           <label>Nom :</label>
           <input type="text" placeholder="Doe" formControlName="name"/>
         </div>
-  
+
         <div class="col">
           <label>Prenom :</label>
           <input type="text" placeholder="John" formControlName="firstname"/>
         </div>
       </div>
-  
+
       <div class="row">
         <div class="col">
           <label>Email :</label>
@@ -31,10 +31,6 @@
         <div class="col">
           <label >Mot de passe :</label>
           <input type="password" placeholder="********" formControlName="password" [ngClass]="{ 'is-invalid': form.controls['password'].errors }"/>
-        </div>
-        <div class="col">
-          <label>Confirmer mot de passe :</label>
-          <input type="password" placeholder="********" />
         </div>
       </div>
     </div>
@@ -62,7 +58,7 @@
       </div>
 
 
-  
+
       <div class="row">
         <div class="col">
           <button class="btn-green">S'inscrire</button>
