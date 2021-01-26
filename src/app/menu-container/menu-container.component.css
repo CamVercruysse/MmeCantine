@@ -97,19 +97,17 @@ button:focus {
   outline: 0px;
 }
 
-
-
-  .alert{
-    background-color:#fad0d0;
-    padding: 1em;
-    border-radius: 1em;
-    }
-    
-    .success{
-    background-color: #45bf87;
-    padding: 1em;
-    border-radius: 1em;
-    }
+.alert {
+  background-color:#fad0d0;
+  padding: 1em;
+  border-radius: 1em;
+}
+  
+  .success {
+  background-color: #45bf87;
+  padding: 1em;
+  border-radius: 1em;
+}
 
     @media screen and (max-width: 992px) {
 
