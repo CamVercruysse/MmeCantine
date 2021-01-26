@@ -12,9 +12,7 @@
                 [(ngModel)]="authService.credentials.password"
                 type="password" placeholder="••••••••••">
         </div>     
-        <!-- <button *ngIf="checkStatus()"
-            (click)="logout()"
-            >Déconnexion</button> -->
+
         <button *ngIf="!checkStatus()"
                 (click)="login()"
                 routerLink="/"

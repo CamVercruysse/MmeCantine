@@ -16,7 +16,11 @@ export class AuthComponent implements OnInit {
   public currentUser: User | null;
   public isLunchLady: boolean;
   
-  constructor(private http: HttpClient, private authService: AuthService, private router: Router) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
